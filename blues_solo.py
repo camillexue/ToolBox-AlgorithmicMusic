@@ -52,7 +52,7 @@ licks = [[(1, 0.5 * 1.1), (1, 0.5 * 0.9), (1, 0.5 * 1.1), (1, 0.5 * 0.9)],
 for _ in range(10):
     lick = random.choice(licks)
     for note in lick:
+        curr_note += note[0]
         if curr_note < 0 or curr_note > len(blues_scale) - 1:
             curr_note = 5
-        curr_note += note[0]
         play_note(blues_scale[curr_note], note[1], bpm=beats_per_minute)
